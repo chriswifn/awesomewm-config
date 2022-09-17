@@ -1,0 +1,17 @@
+#+TITLE: AwesomeWM configuration
+#+AUTHOR: Christian Hageloch
+
+* Configuration
+Very basic configuration of the Awesome Window Manager.
+Custom settings:
+- Modus-Vivendi and Gruvbox Theme
+- Custom layout text_boxes inspired by dwm
+- dwm-functionality: viewing all tags on one screen at once (Mod4 + 0)
+- Move clients to secondary screen while preserving window rules (certain tags for certain applications)
+- Keybinding to make a client sticky (will be visible on every tag you switch to) by hitting Mod + Control + s
+- Toggle functionality for every module in the wibar
+
+* Installation
+#+begin_src emacs-lisp
+  git clone https://github.com/chriswifn/awesomewm-config.git ~/.config/awesome
+#+end_src
