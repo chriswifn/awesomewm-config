@@ -49,6 +49,10 @@ awful.screen.connect_for_each_screen(function(s)
     s.internet = awful.widget.watch("sb-internet", 1)
     s.internet.visible = false
 
+    -- volume and microphone widget
+    s.volmic = awful.widget.watch("sb-volmic", 1)
+    s.volmic.visible = false
+
     -- layout widget (inspired by dwm)
     s.mytxtlayoutbox = wibox.widget.textbox(beautiful["layout_txt_" .. awful.layout.getname(awful.layout.get(s))])
     awful.tag.attached_connect_signal(s, "property::selected", function () update_txt_layoutbox(s) end)
@@ -83,11 +87,12 @@ awful.screen.connect_for_each_screen(function(s)
         },
         s.mytasklist,
         {
-            s.systray,
             layout = wibox.layout.fixed.horizontal,
+            s.volmic,
             s.internet,
             s.battery,
             s.mytextclock,
+            s.systray,
 	    s.mytxtlayoutbox,
         },
     }

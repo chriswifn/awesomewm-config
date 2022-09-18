@@ -10,6 +10,7 @@ Custom settings:
 - Move clients to secondary screen while preserving window rules (certain tags for certain applications)
 - Keybinding to make a client sticky (will be visible on every tag you switch to) by hitting Mod4 + Control + s
 - Toggle functionality for every module in the wibar
+- For modules in wibar see [[https://github.com/chriswifn/dotfiles/tree/main/home/.local/bin/statusbar][dotfiles repository]]
 
 * Installation
 #+begin_src emacs-lisp
