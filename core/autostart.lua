@@ -12,6 +12,8 @@ end
 run_once({ 
   -- gui polkit
   "lxsession", 
+  -- sxhkd
+  "sxhkd",
   -- nobody needs caps lock 
   "setxkbmap -option caps:escape",
   -- to fix java bugs in applications
