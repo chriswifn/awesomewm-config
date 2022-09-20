@@ -14,6 +14,8 @@ run_once({
   "lxsession", 
   -- sxhkd
   "sxhkd",
+  -- picom
+  "picom --config ~/.config/picom/picom.conf",
   -- nobody needs caps lock 
   "setxkbmap -option caps:escape",
   -- to fix java bugs in applications
