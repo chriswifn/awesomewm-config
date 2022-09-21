@@ -1,6 +1,6 @@
 -- variable declaration for easy access 
 local apps = {
-   terminal = "st",
+   terminal = "alacritty",
    editor = "emacsclient -c -a 'emacs' ",
    browser = "firefox",
 }
