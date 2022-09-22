@@ -10,71 +10,6 @@ require("awful.autofocus")
 -- modkey should be super
 local modkey = "Mod4"
 
--- dwm functionality of showing all tags at once
--- saves the current tag you're on and restores it by hitting keybinding again
--- maped to Super + 0
-local state = false
-function toggle_view_all_tags()
-    local screen = awful.screen.focused()
-    if (state == false)
-        then
-            current_tag = awful.screen.focused().selected_tags
-            for i = 1,9 do
-                local tag = screen.tags[i]
-                if #tag:clients() > 0
-                    then
-                        tag.selected = true
-                    end
-            end
-            awful.layout.set(awful.layout.suit.tile)
-            state = true
-        else
-            state = false
-            awful.layout.set(awful.layout.suit.tile)
-            for i = 1,9 do
-               local tag = screen.tags[i]
-               for _, v in ipairs(current_tag) do
-                  if tag == v then
-                     tag.selected = true 
-                  else
-                     tag.selected = false 
-                  end
-               end
-            end
-        end
-end
-
--- move client to other screen while preserving tag
-move_client_to_screen = function(c, s)
-	function avoid_showing_empty_tag_client_move(c)
-		-- Get the current tag.
-		local t = c.first_tag or awful.screen.focused().selected_tag
-		-- Cycle through all clients on the current tag. If there are 2 or greater clients on the current tag then leave function.
-		for _, cl in ipairs(t:clients()) do
-			if cl ~= c then
-				return
-			end
-		end
-		-- This step is only run if there is one client on the current tag.
-		-- Cycle through all tags on the current screen. We must skip the current tag. We then move to the lowest index tag with one or more clients on it.
-		for _, tg in ipairs(awful.screen.focused().tags) do
-			if tg ~= t then
-				if #tg:clients() > 0 then
-					tg:view_only()
-					break
-				end
-			end
-		end
-	end
-	avoid_showing_empty_tag_client_move(c)
-	-- Move to new screen but also keep it on the same tag index.
-	local index = c.first_tag.index
-	c:move_to_screen(s)
-	local tag = c.screen.tags[index]
-	c:move_to_tag(tag)
-	tag:view_only()
-end
-
 -- actual keybindings
 globalkeys = gears.table.join(
 
@@ -239,13 +174,7 @@ clientkeys = gears.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c:raise()
         end ,
-        {description = "(un)maximize horizontally", group = "client"}),
-
-    awful.key({ modkey, "Mod1" }, "h", function (c) move_client_to_screen(c, c.screen.index-1) end,
-       {description = "move client one screen left", group = "client"}),
-
-    awful.key({ modkey, "Mod1" }, "l", function (c) move_client_to_screen(c, c.screen.index+1) end,
-       {description = "move client one screen right", group = "client"})
+        {description = "(un)maximize horizontally", group = "client"})
 )
 
 for i = 1, 9 do
