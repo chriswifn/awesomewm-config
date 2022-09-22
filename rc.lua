@@ -1,7 +1,7 @@
 -- error handling in case something goes wrong during startup
 require("core.error_handling")
 
--- layouts (tiling, monocle, floating)
+-- layouts [tiling, monocle, floating]
 require("core.layouts")
 
 -- theme (modus-vivendi)
