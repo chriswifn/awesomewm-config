@@ -21,3 +21,13 @@ require("core.rules")
 
 -- configuration for wibar
 require("core.bar")
+
+local gears = require("gears")
+
+collectgarbage("setpause", 160)
+collectgarbage("setstepmul", 400)
+
+gears.timer.start_new(10, function()
+  collectgarbage("step", 20000)
+  return true
+end)
