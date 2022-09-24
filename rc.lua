@@ -22,6 +22,7 @@ require("core.rules")
 -- configuration for wibar
 require("core.bar")
 
+-- limit garbage collection
 local gears = require("gears")
 
 collectgarbage("setpause", 160)
