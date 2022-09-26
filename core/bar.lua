@@ -46,21 +46,21 @@ awful.screen.connect_for_each_screen(function(s)
       s.mytextclock.visible = false
 
       -- internet widget (shows wifi, eth, and vpn, toggle on with super + b + w)
-      s.internet = awful.widget.watch("sb-internet", 1)
+      s.internet = awful.widget.watch("sb-internet", 1, collectgarbage())
       s.internet.visible = false
 
       -- volume and microphone widget
-      s.volmic = awful.widget.watch("sb-volmic", 1)
+      s.volmic = awful.widget.watch("sb-volmic", 1, collectgarbage())
       s.volmic.visible = false
+
+      -- battery widget (toggled by default, toggle on with super + b + b)
+      s.battery = awful.widget.watch("sb-battery", 1000, collectgarbage())
+      s.battery.visible = false
 
       -- layout widget (inspired by dwm)
       s.mytxtlayoutbox = wibox.widget.textbox(beautiful["layout_txt_" .. awful.layout.getname(awful.layout.get(s))])
       awful.tag.attached_connect_signal(s, "property::selected", function () update_txt_layoutbox(s) end)
       awful.tag.attached_connect_signal(s, "property::layout", function () update_txt_layoutbox(s) end)
-
-      -- battery widget (toggled by default, toggle on with super + b + b)
-      s.battery = awful.widget.watch("sb-battery", 1000)
-      s.battery.visible = false
 
       s.mytaglist = awful.widget.taglist {
          screen  = s,
