@@ -3,8 +3,6 @@ local wibox = require("wibox")
 -- standard awesome library
 local awful = require("awful")
 local gears = require("gears")
--- my theme library (colors, border_width, ...)
-local theme = require("theme.modus-vivendi.theme")
 -- Theme handling library
 local beautiful = require("beautiful")
 
