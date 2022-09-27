@@ -27,7 +27,7 @@ theme.bg_systray    = theme.bg_normal
 
 -- foreground colors
 theme.fg_normal     = "#bfc0c4"
-theme.fg_focus      = "#ffffff"
+theme.fg_focus      = "#f4f4f4"
 theme.fg_urgent     = "#ff8059"
 theme.fg_minimize   = "#bfc0c4"
 

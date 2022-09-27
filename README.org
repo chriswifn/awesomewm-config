@@ -1,6 +1,10 @@
 #+TITLE: AwesomeWM configuration
 #+AUTHOR: Christian Hageloch
 
+This is my config for the Awesome Window Manager. Is is very minimal (i.e. not wallpaper, no window decorations, ...), but it gets the job done.
+
+[[./img/awesome.png]]
+
 * Configuration
 Very basic configuration of the Awesome Window Manager.
 Custom settings:
