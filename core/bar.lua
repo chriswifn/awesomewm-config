@@ -48,12 +48,12 @@ awful.screen.connect_for_each_screen(function(s)
       s.internet.visible = false
 
       -- volume and microphone widget
-      s.volmic = awful.widget.watch("sb-volmic", 1)
-      s.volmic.visible = false
+      -- s.volmic = awful.widget.watch("sb-volmic", 1)
+      -- s.volmic.visible = false
 
       -- battery widget (toggled by default, toggle on with super + b + b)
-      s.battery = awful.widget.watch("sb-battery", 1000)
-      s.battery.visible = false
+      -- s.battery = awful.widget.watch("sb-battery", 1000)
+      -- s.battery.visible = false
 
       -- layout widget (inspired by dwm)
       s.mytxtlayoutbox = wibox.widget.textbox(beautiful["layout_txt_" .. awful.layout.getname(awful.layout.get(s))])

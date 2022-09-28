@@ -21,9 +21,9 @@ globalkeys = gears.table.join(
                function(_, key, event)
                   if event == "release" then return end
                   if key == "s" then awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible
-                  elseif key == "b" then awful.screen.focused().battery.visible = not awful.screen.focused().battery.visible
+                  -- elseif key == "b" then awful.screen.focused().battery.visible = not awful.screen.focused().battery.visible
                   elseif key == "w" then awful.screen.focused().internet.visible = not awful.screen.focused().internet.visible
-                  elseif key == "v" then awful.screen.focused().volmic.visible = not awful.screen.focused().volmic.visible
+                  -- elseif key == "v" then awful.screen.focused().volmic.visible = not awful.screen.focused().volmic.visible
                   elseif key == "c" then awful.screen.focused().mytextclock.visible = not awful.screen.focused().mytextclock.visible
                   end
                   awful.keygrabber.stop(grabber)
