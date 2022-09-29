@@ -23,15 +23,15 @@ awful.screen.connect_for_each_screen(function(s)
       set_wallpaper(s)
       -- tag declaration
       awful.tag({ 
-            "[1:WWW]", 
-            "[2:EMACS]",
-            "[3:TERM]",
-            "[4:FILE]", 
-            "[5:NVIM]",
-            "[6:DOC]",
-            "[7:MUS]",
-            "[8:VID]",
-            "[9:VIRT]" 
+            "*1:WWW*", 
+            "*2:EMACS*",
+            "*3:TERM*",
+            "*4:FILE*", 
+            "*5:NVIM*",
+            "*6:DOC*",
+            "*7:MUS*",
+            "*8:VID*",
+            "*9:VIRT*" 
                 }, s, awful.layout.layouts[1])
       s.mypromptbox = awful.widget.prompt()
 
