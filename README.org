@@ -7,6 +7,7 @@ This is my config for the Awesome Window Manager. This config is a lot more mini
 - no focus follows mouse
 - no menu in the wibar
 - only 3 layouts
+- no borders: I use dim in picom to distinguish focused and unfocused clients (see [[https://github.com/chriswifn/dotfiles/tree/main/home/.config/picom][dotfiles repository]])
 
 [[./img/awesome.png]]
 
