@@ -44,6 +44,9 @@ theme.border_focus  = "#323232"
 theme.border_marked = "#ff8059"
 theme.taglist_spacing = 8 
 
+-- Wallpaper
+theme.wallpaper = "~/.config/awesome/img/background.png"
+
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(

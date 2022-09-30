@@ -8,7 +8,15 @@ local beautiful = require("beautiful")
 
 -- draws the wallpaper (a black screen)
 local function set_wallpaper(s)
-   gears.wallpaper.set("#000000")
+   -- gears.wallpaper.set("#000000")
+   if beautiful.wallpaper then
+      local wallpaper = beautiful.wallpaper
+      -- If wallpaper is a function, call it with the screen
+      if type(wallpaper) == "function" then
+	 wallpaper = wallpaper(s)
+      end
+      gears.wallpaper.maximized(wallpaper, s, true)
+   end
 end
 
 screen.connect_signal("property::geometry", set_wallpaper)
