@@ -20,7 +20,7 @@ require("core.bindings")
 require("core.rules")
 
 -- configuration for wibar
-require("core.bar")
+require("core.appearance")
 
 -- limit garbage collection
 local gears = require("gears")
