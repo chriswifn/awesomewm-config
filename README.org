@@ -1,7 +1,12 @@
 #+TITLE: AwesomeWM configuration
 #+AUTHOR: Christian Hageloch
 
-This is my config for the Awesome Window Manager. Is is very minimal (i.e. not wallpaper, no window decorations, ...), but it gets the job done.
+This is my config for the Awesome Window Manager. This config is a lot more minimal than the default configuration.
+- no window decorations
+- no right click menu
+- no focus follows mouse
+- no menu in the wibar
+- only 3 layouts
 
 [[./img/awesome.png]]
 
