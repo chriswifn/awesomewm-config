@@ -68,7 +68,7 @@ awful.rules.rules = {
         role = {
            "pop-up",
         }
-   }, properties = { floating = true, placement = "centered"}},
+   }, properties = { floating = true, placement = "centered", tag = false}},
 
    { rule_any = {type = { "normal", "dialog" }
                 }, properties = { titlebars_enabled = false }
