@@ -9,7 +9,8 @@ beautiful.init(string.format("%s/.config/awesome/theme/modus-vivendi/theme.lua",
 -- function to remove border in case of only 1 client on screen
 function border_adjust(c)
    if c.maximized then 
-      c.border_width = 0
+      c.border_width = "0"
+      c.border_color = beatiful.border_focus
    elseif #awful.screen.focused().clients > 1 then
       c.border_width = beautiful.border_width
       c.border_color = beautiful.border_focus

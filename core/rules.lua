@@ -45,13 +45,16 @@ awful.rules.rules = {
      properties = { tag = "*7:MUS*", switchtotag = true } },
 
    { rule = { class = "Virt-manager"},
-     properties = { tag = "*9:VIRT*", switchtotag = true } },
+     properties = { tag = "*9:NULL*", switchtotag = true } },
 
    { rule_any = { class = { "file", "Pcmanfm" } },
      properties = { tag = "*4:FILE*", switchtotag = true } },
 
    { rule_any = { class = { "nvim", "dev" } },
      properties = { tag = "*5:NVIM*", switchtotag = true } },
+
+   { rule_any = { class = "MATLAB R2022b - academic use" },
+     properties = { tag = "*9:NULL*", switchtotag = true } },
 
    { rule_any = {
         instance = {

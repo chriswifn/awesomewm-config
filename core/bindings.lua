@@ -21,10 +21,6 @@ globalkeys = gears.table.join(
                function(_, key, event)
                   if event == "release" then return end
                   if key == "s" then awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible
-                  -- elseif key == "b" then awful.screen.focused().battery.visible = not awful.screen.focused().battery.visible
-                  elseif key == "w" then awful.screen.focused().internet.visible = not awful.screen.focused().internet.visible
-                  -- elseif key == "v" then awful.screen.focused().volmic.visible = not awful.screen.focused().volmic.visible
-                  elseif key == "c" then awful.screen.focused().mytextclock.visible = not awful.screen.focused().mytextclock.visible
                   end
                   awful.keygrabber.stop(grabber)
                end
@@ -32,6 +28,120 @@ globalkeys = gears.table.join(
    end,
       {description = "followed by RET", group="Bar"}
    ),
+
+   -- emacs
+   awful.key ( {modkey}, "e", function()
+	 local grabber
+	 grabber =
+	    awful.keygrabber.run(
+	       function(_, key, event)
+		  if event == "release" then return end
+		  if key == "e" then awful.spawn.with_shell(apps.editor)
+		  elseif key == "b" then awful.spawn.with_shell(apps.editor .. "--eval '(ibuffer)'")
+		  elseif key == "d" then awful.spawn.with_shell(apps.editor .. "--eval '(dired nil)'")
+		  end
+		  awful.keygrabber.stop(grabber)
+	       end
+	    )
+   end,
+      {description = "followed by KEY", group="Emacs"}
+   ),
+
+   -- terminal applications
+   awful.key ( {modkey}, "t", function()
+	 local grabber
+	 grabber =
+	    awful.keygrabber.run(
+	       function(_, key, event)
+		  if event == "release" then return end
+		  if key == "t" then awful.spawn.with_shell(apps.terminal .. "-c 'dev' -e tmux")
+		  elseif key == "n" then awful.spawn.with_shell(apps.terminal .. "-c 'nvim' -e nvim")
+		  elseif key == "h" then awful.spawn.with_shell(apps.terminal .. "-e htop")
+		  elseif key == "a" then awful.spawn.with_shell(apps.terminal .. "-c 'mus' -e cmus")
+		  elseif key == "r" then awful.spawn.with_shell(apps.terminal .. "-c 'file' -e ranger")
+		  elseif key == "p" then awful.spawn.with_shell(apps.terminal .. "-e pulsemixer")
+		  end
+		  awful.keygrabber.stop(grabber)
+	       end
+	    )
+   end,
+      {description = "followed by KEY", group="Terminal"}
+   ),
+
+   -- dmenu scripts
+   awful.key ( {modkey}, "p", function()
+	 local grabber
+	 grabber =
+	    awful.keygrabber.run(
+	       function(_, key, event)
+		  if event == "release" then return end
+		  if key == "a" then awful.spawn.with_shell("dmenu_run -l 10")
+		  elseif key == "m" then awful.spawn.with_shell("monitors")
+		  elseif key == "b" then awful.spawn.with_shell("bookmarks")
+		  elseif key == "k" then awful.spawn.with_shell("keyboard")
+		  elseif key == "s" then awful.spawn.with_shell("maimmenu")
+		  elseif key == "i" then awful.spawn.with_shell("network")
+		  elseif key == "l" then awful.spawn.with_shell("logoutmenu")
+		  elseif key == "p" then awful.spawn.with_shell("passmenu -l 20 -p 'Choose password: '")
+		  elseif key == "w" then awful.spawn.with_shell("connectwifi")
+		  elseif key == "e" then awful.spawn.with_shell("emojipicker")
+		  elseif key == "v" then awful.spawn.with_shell("audiodevice")
+		  elseif key == "c" then awful.spawn.with_shell("audioinputdevice")
+		  elseif key == "t" then awful.spawn.with_shell("touchpad")
+		  end
+		  awful.keygrabber.stop(grabber)
+	       end
+	    )
+   end,
+      {description = "followed by KEY", group="Terminal"}
+   ),
+
+
+   -- scripts to control audio (both input and output), brightness and a night mode
+   awful.key({ modkey,           }, "F1", function() awful.spawn.with_shell("volume mute") end,
+      {description="volume", group="volume"}),
+
+   awful.key({ modkey,           }, "F2", function() awful.spawn.with_shell("volume down") end,
+      {description="volume", group="volume"}),
+
+   awful.key({ modkey,           }, "F3", function() awful.spawn.with_shell("volume up") end,
+      {description="volume", group="volume"}),
+
+   awful.key({ modkey,           }, "F4", function() awful.spawn.with_shell("microphone mute") end,
+      {description="volume", group="volume"}),
+
+   awful.key({ modkey,           }, "F5", function() awful.spawn.with_shell("microphone down") end,
+      {description="volume", group="volume"}),
+
+   awful.key({ modkey,           }, "F6", function() awful.spawn.with_shell("microphone up") end,
+      {description="volume", group="volume"}),
+
+   awful.key({ modkey,           }, "F7", function() awful.spawn.with_shell("brightness down") end,
+      {description="volume", group="volume"}),
+   
+   awful.key({ modkey,           }, "F8", function() awful.spawn.with_shell("brightness up") end,
+      {description="volume", group="volume"}),
+
+   awful.key({ modkey,           }, "F9", function() awful.spawn.with_shell("gamma") end,
+      {description="volume", group="volume"}),
+
+
+   -- gui applications
+   awful.key({ modkey,           }, "g", function() awful.spawn.with_shell("firefox") end,
+      {description="volume", group="volume"}),
+
+   awful.key({ modkey,           }, "z", function() awful.spawn.with_shell("zathura") end,
+      {description="volume", group="volume"}),
+
+   awful.key({ modkey, "Shift"   }, "f", function() awful.spawn.with_shell("pcmanfm") end,
+      {description="volume", group="volume"}),
+
+   awful.key({ modkey,           }, "v", function() awful.spawn.with_shell("virt-manager") end,
+      {description="volume", group="volume"}),
+
+   awful.key({ modkey, "Shift"   }, "s", function() awful.spawn.with_shell("slock") end,
+      {description="volume", group="volume"}),
+
 
    -- awesome specific keybindings
    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,

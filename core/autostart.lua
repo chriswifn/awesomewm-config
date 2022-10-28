@@ -9,13 +9,9 @@ local function run_once(cmd_arr)
 end
 
 -- programs that should autostart
-run_once({ 
+run_once({
       -- gui polkit
-      "lxsession", 
-      -- sxhkd
-      "sxhkd",
-      -- picom
-      "picom --config ~/.config/picom/picom.conf",
+      "lxsession",
       -- nobody needs caps lock 
       "setxkbmap -option caps:escape",
       -- to fix java bugs in applications

@@ -37,10 +37,10 @@ theme.layout_txt_max= "[M]"
 theme.layout_txt_floating= "[F]"
 
 -- gaps and border options
-theme.useless_gap   = dpi(2)
-theme.border_width  = dpi(0)
+theme.useless_gap   = dpi(0)
+theme.border_width  = dpi(5)
 theme.border_normal = "#000000"
-theme.border_focus  = "#323232"
+theme.border_focus  = "#f78fe7"
 theme.border_marked = "#ff8059"
 theme.taglist_spacing = 8 
 
