@@ -32,7 +32,18 @@ awful.screen.connect_for_each_screen(function(s)
             "*7:MUS*",
             "*8:VID*",
             "*9:NULL*" 
-                }, s, awful.layout.layouts[1])
+                },
+	 s,
+	 {awful.layout.layouts[2],
+	  awful.layout.layouts[1],
+	  awful.layout.layouts[1],
+	  awful.layout.layouts[1],
+	  awful.layout.layouts[1],
+	  awful.layout.layouts[1],
+	  awful.layout.layouts[1],
+	  awful.layout.layouts[1],
+	  awful.layout.layouts[2],
+      })
       s.mypromptbox = awful.widget.prompt()
 
       -- systray widget (toggled by default, toggle on with super + b + s)
