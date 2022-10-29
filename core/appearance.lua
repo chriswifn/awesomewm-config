@@ -69,7 +69,7 @@ awful.screen.connect_for_each_screen(function(s)
       }
       s.mylayoutbox = awful.widget.layoutbox(s)
 
-      s.mywibox = awful.wibar({ position = "top", screen = s, border_width = 0, border_color = "#f4f4f4", visible = false})
+      s.mywibox = awful.wibar({ position = "bottom", screen = s, border_width = 0, border_color = "#f4f4f4", visible = false})
       s.mywibox:setup {
          layout = wibox.layout.align.horizontal,
          {
