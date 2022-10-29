@@ -75,14 +75,14 @@ globalkeys = gears.table.join(
 	    awful.keygrabber.run(
 	       function(_, key, event)
 		  if event == "release" then return end
-		  if key == "a" then awful.spawn.with_shell("dmenu_run")
+		  if key == "a" then awful.spawn.with_shell("dmenu_run -l 10")
 		  elseif key == "m" then awful.spawn.with_shell("monitors")
 		  elseif key == "b" then awful.spawn.with_shell("bookmarks")
 		  elseif key == "k" then awful.spawn.with_shell("keyboard")
 		  elseif key == "s" then awful.spawn.with_shell("maimmenu")
 		  elseif key == "i" then awful.spawn.with_shell("network")
 		  elseif key == "l" then awful.spawn.with_shell("logoutmenu")
-		  elseif key == "p" then awful.spawn.with_shell("passmenu -p 'Choose password: '")
+		  elseif key == "p" then awful.spawn.with_shell("passmenu -l 10 -p 'Choose password: '")
 		  elseif key == "w" then awful.spawn.with_shell("connectwifi")
 		  elseif key == "e" then awful.spawn.with_shell("emojipicker")
 		  elseif key == "v" then awful.spawn.with_shell("audiodevice")
@@ -224,7 +224,7 @@ globalkeys = gears.table.join(
          end
       end,
       {description = "restore minimized", group = "client"}),
-   awful.key({ modkey, "Control" }, "Return", function () awful.util.spawn("dmenu_run") end,
+   awful.key({ modkey, "Control" }, "Return", function () awful.util.spawn("dmenu_run -l 10") end,
       {description = "run prompt", group = "launcher"}),
    awful.key({ modkey }, "x",
       function ()
