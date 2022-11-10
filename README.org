@@ -5,20 +5,14 @@ This is my config for the Awesome Window Manager. This config is a lot more mini
 - no window decorations
 - no right click menu
 - no focus follows mouse
-- no menu in the wibar
-- only 3 layouts
-- no borders: I use dim in picom to distinguish focused and unfocused clients (see [[https://github.com/chriswifn/dotfiles/tree/main/home/.config/picom][dotfiles repository]])
-
-[[./img/awesome.png]]
+- no wibar
 
 * Configuration
 Very basic configuration of the Awesome Window Manager.
 Custom settings:
 - Modus-Vivendi and Gruvbox Theme
-- Custom layout text_boxes inspired by dwm
 - Keybinding to make a client sticky (will be visible on every tag you switch to) by hitting Mod4 + Control + s
 - Toggle functionality for every module in the wibar
-- For modules in wibar see [[https://github.com/chriswifn/dotfiles/tree/main/home/.local/bin/statusbar][dotfiles repository]]
 
 * Installation
 #+begin_src emacs-lisp

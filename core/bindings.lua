@@ -1,6 +1,7 @@
 -- standard awesome library
 local awful = require("awful")
 local gears = require("gears")
+local beautiful = require("beautiful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 -- variables for certain applications
@@ -164,16 +165,6 @@ globalkeys = gears.table.join(
       end,
       {description = "focus previous by index", group = "client"}
    ),
-   awful.key({ modkey, "Shift" }, "b",
-      function ()
-         for s in screen do
-            s.mywibox.visible = not s.mywibox.visible
-            if s.mybottomwibox then
-               s.mybottomwibox.visible = not s.mybottomwibox.visible
-            end
-         end
-      end,
-      {description = "Toggle wibox", group = "awesome"}),
    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
       {description = "swap with next client by index", group = "client"}),
    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
@@ -225,17 +216,7 @@ globalkeys = gears.table.join(
       end,
       {description = "restore minimized", group = "client"}),
    awful.key({ modkey, "Control" }, "Return", function () awful.util.spawn("dmenu_run -l 10") end,
-      {description = "run prompt", group = "launcher"}),
-   awful.key({ modkey }, "x",
-      function ()
-         awful.prompt.run {
-            prompt       = "Run Lua code: ",
-            textbox      = awful.screen.focused().mypromptbox.widget,
-            exe_callback = awful.util.eval,
-            history_path = awful.util.get_cache_dir() .. "/history_eval"
-         }
-      end,
-      {description = "lua execute prompt", group = "awesome"})
+      {description = "run prompt", group = "launcher"})
 )
 
 clientkeys = gears.table.join(

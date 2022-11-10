@@ -24,37 +24,34 @@ awful.rules.rules = {
    },
 
    { rule = { class = "firefox" },
-     properties = { tag = "*1:WWW*", switchtotag = true } },
+     properties = { tag = "1", switchtotag = true } },
 
    { rule = { class = "st" },
-     properties = { tag = "*3:TERM*", switchtotag = true } },
+     properties = { tag = "3", switchtotag = true } },
 
    { rule = { class = "Alacritty" },
-     properties = { tag = "*3:TERM*", switchtotag = true } },
+     properties = { tag = "3", switchtotag = true } },
 
    { rule = { class = "Emacs"},
-     properties = { tag = "*2:EMACS*", switchtotag = true } },
+     properties = { tag = "2", switchtotag = true } },
 
    { rule = { class = "Zathura"},
-     properties = { tag = "*6:DOC*", switchtotag = true } },
+     properties = { tag = "6", switchtotag = true } },
 
    { rule = { class = "mpv"},
-     properties = { tag = "*8:VID*", switchtotag = true } },
+     properties = { tag = "8", switchtotag = true } },
 
    { rule = { class = "mus"},
-     properties = { tag = "*7:MUS*", switchtotag = true } },
+     properties = { tag = "7", switchtotag = true } },
 
    { rule = { class = "Virt-manager"},
-     properties = { tag = "*9:NULL*", switchtotag = true } },
+     properties = { tag = "9", switchtotag = true } },
 
    { rule_any = { class = { "file", "Pcmanfm" } },
-     properties = { tag = "*4:FILE*", switchtotag = true } },
+     properties = { tag = "4", switchtotag = true } },
 
    { rule_any = { class = { "nvim", "dev" } },
-     properties = { tag = "*5:NVIM*", switchtotag = true } },
-
-   { rule_any = { class = "MATLAB R2022b - academic use" },
-     properties = { tag = "*9:NULL*", switchtotag = true } },
+     properties = { tag = "5", switchtotag = true } },
 
    { rule_any = {
         instance = {
@@ -63,6 +60,7 @@ awful.rules.rules = {
         class = {
            "Sxiv",
            "Tor Browser",
+	   "MATLAB R2022b - academic use",
         },
         name = {
            "bash",
