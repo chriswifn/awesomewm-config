@@ -1,7 +1,6 @@
 -- standard awesome library
 local awful = require("awful")
 local gears = require("gears")
-local beautiful = require("beautiful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 -- variables for certain applications
@@ -10,7 +9,6 @@ require("awful.autofocus")
 
 -- modkey should be super
 local modkey = "Mod4"
-local state = false
 
 -- actual keybindings
 globalkeys = gears.table.join(
@@ -289,35 +287,18 @@ for i = 1, 9 do
 				       end
 				    end,
 				    {description = "toggle tag #" .. i, group = "tag"}),
-				 awful.key({ modkey,           }, "0" ,
+				 awful.key({ modkey,           }, "0" , 
 				    function ()
 				       local screen = awful.screen.focused()
-				       if state == false
-				       then
-					  current_tag = awful.screen.focused().selected_tags
-					  for i = 1,9 do
-					     local tag = screen.tags[i]
-					     if #tag:clients() > 0
-					     then
-						tag.selected = true
-					     end
-					  end
-					  awful.layout.set(awful.layout.suit.fair)
-					  state = true
-				       else
-					  state = false
-					  awful.layout.set(awful.layout.suit.tile)
-					  for i = 1,9 do
-					     local tag = screen.tags[i]
-					     for _, v in ipairs(current_tag) do
-						if tag==v then
-						   tag.selected = true
-						else
-						   tag.selected = false
-						end
-					     end
-					  end
+				       local current_tag = awful.screen.focused().selected_tags
+				       for i = 1,9 do
+				    	  local tag = screen.tags[i]
+				    	  if #tag:clients() > 0
+				    	  then
+				    	     tag.selected = true
+				    	  end
 				       end
+				       awful.layout.set(awful.layout.suit.fair)
 				    end,
 				    {description = "toggle all tags", group = "tag"}),
 				 awful.key({ modkey, "Shift" }, "#" .. i + 9,
