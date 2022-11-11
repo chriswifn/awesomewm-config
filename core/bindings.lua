@@ -287,16 +287,16 @@ for i = 1, 9 do
 				       end
 				    end,
 				    {description = "toggle tag #" .. i, group = "tag"}),
-				 awful.key({ modkey,           }, "0" , 
+				 awful.key({ modkey,           }, "0",
 				    function ()
 				       local screen = awful.screen.focused()
 				       local current_tag = awful.screen.focused().selected_tags
 				       for i = 1,9 do
-				    	  local tag = screen.tags[i]
-				    	  if #tag:clients() > 0
-				    	  then
-				    	     tag.selected = true
-				    	  end
+					  local tag = screen.tags[i]
+					  if #tag:clients() > 0
+					  then
+					     tag.selected = true
+					  end
 				       end
 				       awful.layout.set(awful.layout.suit.fair)
 				    end,
