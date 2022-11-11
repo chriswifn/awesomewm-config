@@ -1,5 +1,3 @@
--- widget and layout library
-local wibox = require("wibox")
 -- standard awesome library
 local awful = require("awful")
 local gears = require("gears")
