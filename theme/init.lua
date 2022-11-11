@@ -2,6 +2,11 @@ local beautiful = require("beautiful")
 local gears = require("gears")
 local awful = require("awful")
 
+-- configure naughty to be in the center at the top
+local naughty = require("naughty")
+local nconf = naughty.config
+nconf.defaults.position = "top_middle"
+
 -- Selected theme
 beautiful.init(string.format("%s/.config/awesome/theme/modus-vivendi/theme.lua", os.getenv("HOME")))
 
