@@ -28,6 +28,7 @@ theme.fg_minimize   = "#bfc0c4"
 
 -- gaps and border options
 theme.useless_gap   = dpi(2)
+theme.gap_single_client = false
 theme.border_width  = dpi(1)
 theme.border_normal = "#323232"
 theme.border_focus  = "#f78fe7"
