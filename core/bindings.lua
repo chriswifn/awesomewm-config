@@ -97,50 +97,35 @@ globalkeys = gears.table.join(
    ),
 
 
-   -- scripts to control audio (both input and output), brightness and a night mode
-   awful.key({ modkey,           }, "F1", function() awful.spawn.with_shell("volume mute") end,
+   -- scripts to control audio (both input and output)
+   awful.key({ modkey, "Mod1", }, "k", function() awful.spawn.with_shell("volume up") end,
       {description="volume", group="volume"}),
-
-   awful.key({ modkey,           }, "F2", function() awful.spawn.with_shell("volume down") end,
+   awful.key({ modkey, "Mod1", }, "j", function() awful.spawn.with_shell("volume down") end,
       {description="volume", group="volume"}),
-
-   awful.key({ modkey,           }, "F3", function() awful.spawn.with_shell("volume up") end,
+   awful.key({ modkey, "Mod1", }, "m", function() awful.spawn.with_shell("volume mute") end,
       {description="volume", group="volume"}),
-
-   awful.key({ modkey,           }, "F4", function() awful.spawn.with_shell("microphone mute") end,
+   awful.key({ modkey, "Mod1", "Control"}, "k", function() awful.spawn.with_shell("microphone up") end,
       {description="volume", group="volume"}),
-
-   awful.key({ modkey,           }, "F5", function() awful.spawn.with_shell("microphone down") end,
+   awful.key({ modkey, "Mod1", "Control"}, "j", function() awful.spawn.with_shell("microphone down") end,
       {description="volume", group="volume"}),
-
-   awful.key({ modkey,           }, "F6", function() awful.spawn.with_shell("microphone up") end,
+   awful.key({ modkey, "Mod1", "Control"}, "m", function() awful.spawn.with_shell("microphone mute") end,
       {description="volume", group="volume"}),
-
-   awful.key({ modkey,           }, "F7", function() awful.spawn.with_shell("brightness down") end,
-      {description="volume", group="volume"}),
-   
-   awful.key({ modkey,           }, "F8", function() awful.spawn.with_shell("brightness up") end,
-      {description="volume", group="volume"}),
-
-   awful.key({ modkey,           }, "F9", function() awful.spawn.with_shell("gamma") end,
-      {description="volume", group="volume"}),
-
 
    -- gui applications
    awful.key({ modkey,           }, "g", function() awful.spawn.with_shell("firefox") end,
-      {description="volume", group="volume"}),
+      {description="gui", group="gui"}),
 
    awful.key({ modkey,           }, "z", function() awful.spawn.with_shell("zathura") end,
-      {description="volume", group="volume"}),
+      {description="gui", group="gui"}),
 
    awful.key({ modkey, "Shift"   }, "f", function() awful.spawn.with_shell("pcmanfm") end,
-      {description="volume", group="volume"}),
+      {description="gui", group="gui"}),
 
    awful.key({ modkey,           }, "v", function() awful.spawn.with_shell("virt-manager") end,
-      {description="volume", group="volume"}),
+      {description="gui", group="gui"}),
 
    awful.key({ modkey, "Shift"   }, "s", function() awful.spawn.with_shell("slock") end,
-      {description="volume", group="volume"}),
+      {description="gui", group="gui"}),
 
 
    -- awesome specific keybindings
