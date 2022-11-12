@@ -1,10 +1,7 @@
 -- standard awesome library
 local awful = require("awful")
 local gears = require("gears")
-require("awful.hotkeys_popup.keys")
--- variables for certain applications
 local apps = require("core.apps")
-require("awful.autofocus")
 
 -- keys for emacs
 local emacskeys = require("core.keys.emacs")
