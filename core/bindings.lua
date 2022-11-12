@@ -47,6 +47,25 @@ globalkeys = gears.table.join(
       {description = "followed by KEY", group="Emacs"}
    ),
 
+   -- gui applications
+   awful.key ( {modkey}, "g", function()
+	 local grabber
+	 grabber =
+	    awful.keygrabber.run(
+	       function(_, key, event)
+		  if event == "release" then return end
+		  if key == "g" then awful.spawn.raise_or_spawn("firefox", {class = "firefox"})
+		  elseif key == "z" then awful.spawn.raise_or_spawn("zathura", {class = "zathura"})
+		  elseif key == "f" then awful.spawn.raise_or_spawn("pcmanfm", {class = "pcmanfm"})
+		  elseif key == "v" then awful.spawn.raise_or_spawn("virt-manager", {class = "Virt-manager"}) 
+		  elseif key == "s" then awful.spawn.with_shell("slock")
+		  end
+		  awful.keygrabber.stop(grabber)
+	       end
+	    )
+   end,
+      {description = "followed by KEY", group = "gui"}),
+
    -- terminal applications
    awful.key ( {modkey}, "t", function()
 	 local grabber
@@ -120,23 +139,6 @@ globalkeys = gears.table.join(
       {description="brightness", group="brightness"}),
    awful.key({ modkey, "Mod1" }, "Down", function() awful.spawn.with_shell("gamma") end,
       {description="brightness", group="brightness"}),
-
-   -- gui applications
-   awful.key({ modkey,           }, "g", function() awful.spawn.with_shell("firefox") end,
-      {description="gui", group="gui"}),
-
-   awful.key({ modkey,           }, "z", function() awful.spawn.with_shell("zathura") end,
-      {description="gui", group="gui"}),
-
-   awful.key({ modkey, "Shift"   }, "f", function() awful.spawn.with_shell("pcmanfm") end,
-      {description="gui", group="gui"}),
-
-   awful.key({ modkey,           }, "v", function() awful.spawn.with_shell("virt-manager") end,
-      {description="gui", group="gui"}),
-
-   awful.key({ modkey, "Shift"   }, "s", function() awful.spawn.with_shell("slock") end,
-      {description="gui", group="gui"}),
-
 
    -- awesome specific keybindings
    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
