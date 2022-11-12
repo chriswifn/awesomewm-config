@@ -1,7 +1,7 @@
 -- error handling in case something goes wrong during startup
 require("core.error_handling")
 
--- layouts [tiling, monocle, floating]
+-- layouts [tiling, monocle] and tags
 require("core.layouts")
 
 -- theme (modus-vivendi)
@@ -14,13 +14,10 @@ require("core.autostart")
 require("core.apps")
 
 -- keybindings
-require("core.bindings")
+require("core.keys")
 
 -- window rules
 require("core.rules")
-
--- configuration for wibar
-require("core.appearance")
 
 -- limit garbage collection
 local gears = require("gears")
