@@ -2,6 +2,7 @@
 local awful = require("awful")
 local gears = require("gears")
 local apps = require("core.apps")
+require("awful.autofocus")
 
 -- keys for emacs
 local emacskeys = require("core.keys.emacs")
