@@ -13,6 +13,10 @@ local configuration_path = gfs.get_configuration_dir()
 -- generate table for options
 local theme = {}
 
+-- font
+theme.font = "Monoid 9"
+theme.tasklist_disable_icon = true
+
 -- background colors
 theme.bg_normal     = "#1e1e1e"
 theme.bg_focus      = "#323232"

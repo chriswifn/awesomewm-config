@@ -33,4 +33,3 @@ awful.screen.connect_for_each_screen(function(s)
 	  awful.layout.layouts[2],
       })
 end)
-
