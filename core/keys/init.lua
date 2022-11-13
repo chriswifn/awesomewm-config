@@ -67,7 +67,7 @@ for i = 1, 9 do
 					     tag.selected = true
 					  end
 				       end
-				       awful.layout.set(awful.layout.layouts[1])
+				       awful.layout.set(awful.layout.suit.fair)
 				    end,
 				    {description = "toggle all tags", group = "tag"}),
 				 awful.key({ apps.modkey, "Shift" }, "#" .. i + 9,
