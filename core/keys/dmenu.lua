@@ -23,6 +23,7 @@ local dmenukeys = gtable.join(
 		  elseif key == "v" then awful.spawn.with_shell("audiodevice")
 		  elseif key == "c" then awful.spawn.with_shell("audioinputdevice")
 		  elseif key == "t" then awful.spawn.with_shell("delight")
+		  elseif key == "f" then awful.spawn.with_shell("tabfocus")
 		  end
 		  awful.keygrabber.stop(grabber)
 	       end

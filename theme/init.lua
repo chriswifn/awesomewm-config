@@ -7,7 +7,7 @@ local naughty = require("naughty")
 local nconf = naughty.config
 nconf.defaults.position = "top_middle"
 
-active_theme = "modus-operandi"
+active_theme = "modus-vivendi"
 
 -- Selected theme
 beautiful.init(string.format("%s/.config/awesome/theme/".. active_theme .. "/theme.lua", os.getenv("HOME")))
