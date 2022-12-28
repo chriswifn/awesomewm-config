@@ -18,25 +18,25 @@ theme.font = "Monoid 9"
 theme.tasklist_disable_icon = true
 
 -- background colors
-theme.bg_normal     = "#000000"
-theme.bg_focus      = "#323232"
-theme.bg_urgent     = "#ff8059"
+theme.bg_normal     = "#ffffff"
+theme.bg_focus      = "#bfbfbf"
+theme.bg_urgent     = "#a60000"
 theme.bg_minimize   = "#595959"
 theme.bg_systray    = theme.bg_normal
 
 -- foreground colors
-theme.fg_normal     = "#ffffff"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#000000"
+theme.fg_normal     = "#000000"
+theme.fg_focus      = "#000000"
+theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
 -- gaps and border options
 theme.useless_gap   = dpi(0)
 theme.gap_single_client = false
 theme.border_width  = dpi(5)
-theme.border_normal = "#000000"
-theme.border_focus  = "#feacd0"
-theme.border_marked = "#ff8059"
+theme.border_normal = "#ffffff"
+theme.border_focus  = "#721045"
+theme.border_marked = "#a60000"
 theme.taglist_spacing = 8 
 
 -- Generate taglist squares:

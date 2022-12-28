@@ -7,8 +7,10 @@ local naughty = require("naughty")
 local nconf = naughty.config
 nconf.defaults.position = "top_middle"
 
+active_theme = "modus-operandi"
+
 -- Selected theme
-beautiful.init(string.format("%s/.config/awesome/theme/modus-vivendi/theme.lua", os.getenv("HOME")))
+beautiful.init(string.format("%s/.config/awesome/theme/".. active_theme .. "/theme.lua", os.getenv("HOME")))
 
 -- remove border from single clients and max layout
 screen.connect_signal("arrange", function (s)
