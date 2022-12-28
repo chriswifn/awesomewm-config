@@ -10,15 +10,19 @@ local emacskeys = gtable.join(
 	    awful.keygrabber.run(
 	       function(_, key, event)
 		  if event == "release" then return end
-		  if key == "e" then awful.spawn.with_shell(apps.editor)
+		  if key == "e" then
+		    local matcher = function(c)
+		      return awful.rules.match(c, {class = "Emacs"})
+		    end
+		    awful.client.run_or_raise(apps.editor, matcher)
+
 		  elseif key == "b" then awful.spawn.with_shell(apps.editor .. "--eval '(ibuffer)'")
-		  elseif key == "d" then awful.spawn.with_shell(apps.editor .. "--eval '(dired nil)'")
 		  end
 		  awful.keygrabber.stop(grabber)
 	       end
 	    )
    end,
-      {description = "followed by KEY", group="Emacs"}
+      {description = "emacs keys", group="emacs"}
    )
 )
 

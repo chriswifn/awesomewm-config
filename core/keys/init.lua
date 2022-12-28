@@ -16,9 +16,6 @@ local terminalkeys = require("core.keys.terminal")
 -- keys for dmenu scripts
 local dmenukeys = require("core.keys.dmenu")
 
--- misc keys
-local misckeys = require("core.keys.misc")
-
 -- default awesome specific keys
 local defaultkeys = require("core.keys.default")
 
@@ -31,7 +28,6 @@ globalkeys = gears.table.join(
    guikeys,
    terminalkeys,
    dmenukeys,
-   misckeys,
    defaultkeys
 )
 

@@ -26,33 +26,6 @@ awful.rules.rules = {
    { rule = { class = "firefox" },
      properties = { tag = "1", switchtotag = true } },
 
-   { rule = { class = "st" },
-     properties = { tag = "3", switchtotag = true } },
-
-   { rule = { class = "Alacritty" },
-     properties = { tag = "3", switchtotag = true } },
-
-   { rule = { class = "Emacs"},
-     properties = { tag = "2", switchtotag = true } },
-
-   { rule = { class = "Zathura"},
-     properties = { tag = "6", switchtotag = true } },
-
-   { rule = { class = "mpv"},
-     properties = { tag = "8", switchtotag = true } },
-
-   { rule = { class = "mus"},
-     properties = { tag = "7", switchtotag = true } },
-
-   { rule = { class = "Virt-manager"},
-     properties = { tag = "9", switchtotag = true } },
-
-   { rule_any = { class = { "file", "Pcmanfm" } },
-     properties = { tag = "4", switchtotag = true } },
-
-   { rule_any = { class = { "nvim", "dev" } },
-     properties = { tag = "5", switchtotag = true } },
-
    { rule_any = {
         instance = {
            "copyq",

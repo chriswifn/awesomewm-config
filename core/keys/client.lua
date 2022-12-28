@@ -2,53 +2,65 @@ local gtable = require("gears.table")
 local awful = require("awful")
 local apps = require("core.apps")
 
-local clientkeys = gtable.join(
-   awful.key({ apps.modkey,           }, "f",
-      function (c)
-	 c.fullscreen = not c.fullscreen
-	 c:raise()
-      end,
-      {description = "toggle fullscreen", group = "client"}),
-   awful.key({ apps.modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
-      {description = "close", group = "client"}),
-   awful.key({ apps.modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
-      {description = "toggle floating", group = "client"}),
-   awful.key({ apps.modkey, "Control", "Shift" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
-      {description = "move to master", group = "client"}),
-   awful.key({ apps.modkey,           }, "o",      function (c) c:move_to_screen()               end,
-      {description = "move to screen", group = "client"}),
-   awful.key({ apps.modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
-      {description = "toggle keep on top", group = "client"}),
+local function myclient(c)
+  local grabber
+  grabber = awful.keygrabber.run(
+    function(mod, key, event)
+      if event == "release" then return end
 
-   awful.key({ apps.modkey, "Shift" },   "y", awful.placement.centered),
-   awful.key({ apps.modkey,           }, "n",
-      function (c)
-         c.minimized = true
-      end ,
-      {description = "minimize", group = "client"}),
-   awful.key({ apps.modkey,           }, "m",
-      function (c)
-         c.maximized = not c.maximized
-         c:raise()
-      end ,
-      {description = "(un)maximize", group = "client"}),
-   awful.key({ apps.modkey, "Control" }, "s",
-      function (c)
-         c.sticky = not c.sticky
-      end ,
-      {description = "(un)sticky", group = "client"}),
-   awful.key({ apps.modkey, "Control" }, "m",
-      function (c)
-         c.maximized_vertical = not c.maximized_vertical
-         c:raise()
-      end ,
-      {description = "(un)maximize vertically", group = "client"}),
-   awful.key({ apps.modkey, "Shift"   }, "m",
-      function (c)
-         c.maximized_horizontal = not c.maximized_horizontal
-         c:raise()
-      end ,
-      {description = "(un)maximize horizontally", group = "client"})
+      if key == "c" then -- kill a client
+	c:kill()
+
+      elseif key == "f" then
+	c.fullscreen = not c.fullscreen
+	c:raise()
+
+      elseif key == "t" then -- toggle floating
+	awful.client.floating.toggle()
+
+      elseif key == "m" then -- promote to master
+	c:swap(awful.client.getmaster())
+
+      elseif key == "o" then -- move to other screen
+	c:move_to_screen()
+
+      elseif key == "g" then -- go to the center
+	awful.placement.centered()
+
+      elseif key == "s" then -- sticky
+	c.sticky = not c.sticky
+
+      elseif key == "j" then -- swap
+	awful.client.swap.byidx(1)
+
+      elseif key == "k" then -- swap
+	awful.client.swap.byidx(-1)
+
+      elseif key == "u" then -- jump to urgent tag
+	awful.client.urgent.jumpto()
+
+      end
+      awful.keygrabber.stop(grabber)
+  end)
+end
+
+local clientkeys = gtable.join(
+  awful.key( {apps.modkey}, "c", myclient,
+    {description = "client keys", group = "client"}),
+
+  -- focus
+  awful.key({ apps.modkey,           }, "j",
+    function ()
+      awful.client.focus.byidx( 1)
+    end,
+    {description = "focus next by index", group = "client"}
+  ),
+  awful.key({ apps.modkey,           }, "k",
+    function ()
+      awful.client.focus.byidx(-1)
+    end,
+    {description = "client keys", group = "client"}
+  )
 )
 
 return clientkeys

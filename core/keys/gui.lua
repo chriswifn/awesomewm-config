@@ -10,7 +10,11 @@ local guikeys = gtable.join(
 	    awful.keygrabber.run(
 	       function(_, key, event)
 		  if event == "release" then return end
-		  if key == "g" then awful.spawn.raise_or_spawn("firefox", {class = "firefox"})
+		  if key == "g" then
+		    local matcher = function(c)
+		      return awful.rules.match(c, {class = "firefox"})
+		    end
+		    awful.client.run_or_raise(apps.browser, matcher)
 		  elseif key == "z" then awful.spawn.raise_or_spawn("zathura", {class = "zathura"})
 		  elseif key == "f" then awful.spawn.raise_or_spawn("pcmanfm", {class = "pcmanfm"})
 		  elseif key == "v" then awful.spawn.raise_or_spawn("virt-manager", {class = "Virt-manager"}) 
@@ -20,7 +24,7 @@ local guikeys = gtable.join(
 	       end
 	    )
    end,
-      {description = "followed by g", group = "gui"})
+      {description = "gui keys", group = "gui"})
 )
 
 return guikeys
