@@ -22,7 +22,7 @@ local dmenukeys = gtable.join(
 		  elseif key == "e" then awful.spawn.with_shell("emojipicker")
 		  elseif key == "v" then awful.spawn.with_shell("audiodevice")
 		  elseif key == "c" then awful.spawn.with_shell("audioinputdevice")
-		  elseif key == "t" then awful.spawn.with_shell("touchpad")
+		  elseif key == "t" then awful.spawn.with_shell("delight")
 		  end
 		  awful.keygrabber.stop(grabber)
 	       end
