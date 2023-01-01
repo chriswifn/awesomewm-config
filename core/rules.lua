@@ -27,21 +27,21 @@ awful.rules.rules = {
      properties = { tag = "1", switchtotag = true } },
 
    { rule_any = {
-        instance = {
-           "copyq",
-        },
-        class = {
-           "Sxiv",
-           "Tor Browser",
-	   "MATLAB R2022b - academic use",
-        },
-        name = {
-           "bash",
-           "Save File"
-        },
-        role = {
-           "pop-up",
-        }
+       instance = {
+	 "copyq",
+       },
+       class = {
+	 "Sxiv",
+	 "Tor Browser",
+	 "MATLAB R2022b - academic use",
+       },
+       name = {
+	 "bash",
+	 "Save File"
+       },
+       role = {
+	 "pop-up",
+       }
    }, properties = { floating = true, placement = "centered", tag = false}},
 
    { rule_any = {type = { "normal", "dialog" }

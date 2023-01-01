@@ -30,6 +30,7 @@ awful.screen.connect_for_each_screen(function(s)
 	  awful.layout.layouts[1],
 	  awful.layout.layouts[1],
 	  awful.layout.layouts[1],
-	  awful.layout.layouts[2],
+	  -- awful.layout.layouts[2],
+	  awful.layout.suit.floating,
       })
 end)
