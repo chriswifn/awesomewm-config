@@ -11,7 +11,7 @@ end
 -- programs that should autostart
 run_once({
       -- gui polkit
-      "/usr/bin/lxpolkit",
+      "/usr/bin/lxsession",
       -- nobody needs caps lock 
       "setxkbmap -option caps:escape",
       -- to fix java bugs in applications
