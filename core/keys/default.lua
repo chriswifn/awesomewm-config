@@ -3,6 +3,21 @@ local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local apps = require("core.apps")
 
+local function rename_tag()
+  awful.prompt.run {
+    prompt       = "New tag name: ",
+    textbox      = awful.screen.focused().mypromptbox.widget,
+    exe_callback = function(new_name)
+      if not new_name or #new_name == 0 then return end
+
+      local t = awful.screen.focused().selected_tag
+      if t then
+	t.name = t.name .. " [" .. new_name .. "]"
+      end
+    end
+  }
+end
+
 local defaultkeys = gtable.join(
   -- awesome specific keybindings
   awful.key( {apps.modkey}, "x", function()
@@ -44,6 +59,9 @@ local defaultkeys = gtable.join(
 
 	    elseif key == "w" then -- show all open windows
 	      awful.util.spawn("rofi -show window")
+
+	    elseif key == "n" then
+	      rename_tag()
 
 	    end
 	    awful.keygrabber.stop(grabber)

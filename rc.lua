@@ -1,11 +1,11 @@
 -- error handling in case something goes wrong during startup
 require("core.error_handling")
 
--- layouts [tiling, monocle] and tags
-require("core.layouts")
+-- general configuration of stuff 
+require("core.general")
 
 -- theme (modus-vivendi)
-require("theme.init")
+-- require("theme.init")
 
 -- autostarted applications
 require("core.autostart")
