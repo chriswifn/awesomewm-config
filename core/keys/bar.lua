@@ -2,20 +2,6 @@ local gtable = require("gears.table")
 local awful = require("awful")
 local apps = require("core.apps")
 
-local function togglebar()
-  for s in screen do
-    s.mywibox.visible = not s.mywibox.visible
-  end
-end
-
-local function togglesystray()
-  awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible
-end
-
-local function togglelayout()
-  awful.screen.focused().mylayoutbox.visible = not awful.screen.focused().mylayoutbox.visible
-end
-
 local barkeys = gtable.join(
   -- keybindings for the wibar 
   awful.key ( {apps.modkey}, "b", function()
@@ -25,11 +11,13 @@ local barkeys = gtable.join(
 	  function(_, key, event)
 	    if event == "release" then return end
 	    if key == "b" then
-	      togglebar()
+	      for s in screen do
+		s.mywibox.visible = not s.mywibox.visible
+	      end
 	    elseif key == "s" then
-	      togglesystray()
+	      awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible
 	    elseif key == "l" then
-	      togglelayout()
+	      awful.screen.focused().mylayoutbox.visible = not awful.screen.focused().mylayoutbox.visible
 	    end
 	    awful.keygrabber.stop(grabber)
 	  end
