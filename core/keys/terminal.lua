@@ -12,7 +12,7 @@ local terminalkeys = gtable.join(
 	    if event == "release" then return end
 	    if key == "t" then
 	      local matcher = function(c)
-		return awful.rules.match(c, {class = "Alacritty"}) 
+		return awful.rules.match(c, {class = "st-256color"}) 
 	      end
 	      awful.client.run_or_raise(apps.terminal .. "-e tmux new-session -A -s tempterm", matcher)
 	    elseif key == "n" then awful.spawn(apps.terminal)
