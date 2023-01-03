@@ -22,17 +22,13 @@ local defaultkeys = require("core.keys.default")
 -- client buttons
 local myclientkeys = require("core.keys.client")
 
--- bar keys
-local barkeys = require("core.keys.bar")
-
 -- actual keybindings
 globalkeys = gears.table.join(
   emacskeys,
   guikeys,
   terminalkeys,
   dmenukeys,
-  defaultkeys,
-  barkeys
+  defaultkeys
 )
 
 -- keybindings for tags

@@ -3,8 +3,6 @@ local awful = require("awful")
 local gears = require("gears")
 -- Theme handling library
 local beautiful = require("beautiful")
--- for the bar
-local wibox = require("wibox")
 
 -- configure naughty to be in the center at the top
 local naughty = require("naughty")
@@ -50,46 +48,6 @@ awful.screen.connect_for_each_screen(function(s)
        awful.layout.layouts[1],
        awful.layout.suit.floating,
     })
-
-    s.mylayoutbox = awful.widget.layoutbox(s)
-    s.mylayoutbox.visible = false 
-
-    s.systray = wibox.widget.systray()
-    s.systray.visible = false
-
-    s.mypromptbox = awful.widget.prompt()
-
-    s.mytaglist = awful.widget.taglist {
-      screen  = s,
-      filter  = awful.widget.taglist.filter.noempty,
-      buttons = taglist_buttons
-    }
-
-    -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist {
-      screen  = s,
-      filter  = awful.widget.tasklist.filter.currenttags,
-      buttons = tasklist_buttons
-    }
-
-    -- Create the wibox
-    s.mywibox = awful.wibar({ position = "bottom", screen = s, height = 28 })
-
-    -- Add widgets to the wibox
-    s.mywibox:setup {
-      layout = wibox.layout.align.horizontal,
-      { -- Left widgets
-	layout = wibox.layout.fixed.horizontal,
-	s.mytaglist,
-	s.mypromptbox,
-      },
-      s.mytasklist, -- Middle widget
-      { -- Right widgets
-	layout = wibox.layout.fixed.horizontal,
-	s.systray,
-	s.mylayoutbox,
-      },
-    }
 end)
 
 -- remove border from single clients and max layout

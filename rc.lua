@@ -4,9 +4,6 @@ require("core.error_handling")
 -- general configuration of stuff 
 require("core.general")
 
--- theme (modus-vivendi)
--- require("theme.init")
-
 -- autostarted applications
 require("core.autostart")
 
