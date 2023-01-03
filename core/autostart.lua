@@ -10,12 +10,14 @@ end
 
 -- programs that should autostart
 run_once({
-      -- gui polkit
-      "/usr/bin/lxpolkit",
-      -- nobody needs caps lock 
-      "setxkbmap -option caps:escape",
-      -- to fix java bugs in applications
-      "wmname LG3D",
-      -- emacs-server for SPEEEEEEEEED!!!
-      "/usr/bin/emacs --daemon",
+    -- gui polkit
+    "/usr/bin/lxpolkit",
+    -- nobody needs caps lock 
+    "setxkbmap -option caps:escape",
+    -- xresources
+    "xrdb -merge $HOME/.config/x11/xresources",
+    -- to fix java bugs in applications
+    "wmname LG3D",
+    -- emacs-server for SPEEEEEEEEED!!!
+    "/usr/bin/emacs --daemon",
 })
