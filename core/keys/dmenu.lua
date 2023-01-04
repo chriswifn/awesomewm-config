@@ -10,7 +10,7 @@ local dmenukeys = gtable.join(
 		awful.keygrabber.run(
 		    function(_, key, event)
 			if event == "release" then return end
-			if key == "a" then awful.spawn.with_shell("dmenu_run -l 10")
+			if key == "a" then awful.spawn.with_shell("rofi -show drun")
 			elseif key == "m" then awful.spawn.with_shell("monitors")
 			elseif key == "b" then awful.spawn.with_shell("bookmarks")
 			elseif key == "k" then awful.spawn.with_shell("keyboard")
