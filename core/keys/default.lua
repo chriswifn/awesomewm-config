@@ -51,13 +51,7 @@ local defaultkeys = gtable.join(
 		)
     end,
 	{description = "awesome keys", group = "awesome"}
-    ),
-
-    -- resize
-    awful.key({ apps.modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
-	{description = "increase master width factor", group = "layout"}),
-    awful.key({ apps.modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
-	{description = "decrease master width factor", group = "layout"})
+    )
 )
 
 return defaultkeys

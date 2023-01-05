@@ -46,21 +46,7 @@ end
 
 local clientkeys = gtable.join(
     awful.key( {apps.modkey}, "c", myclient,
-	{description = "client keys", group = "client"}),
-
-    -- focus
-    awful.key({ apps.modkey,           }, "j",
-	function ()
-	    awful.client.focus.byidx( 1)
-	end,
-	{description = "focus next by index", group = "client"}
-    ),
-    awful.key({ apps.modkey,           }, "k",
-	function ()
-	    awful.client.focus.byidx(-1)
-	end,
-	{description = "client keys", group = "client"}
-    )
+	{description = "client keys", group = "client"})
 )
 
 return clientkeys
