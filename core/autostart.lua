@@ -10,8 +10,6 @@ end
 
 -- programs that should autostart
 run_once({
-	-- gui polkit
-	"/usr/bin/lxpolkit",
 	-- nobody needs caps lock 
 	"setxkbmap -option caps:escape",
 	-- xresources
